@@ -1,0 +1,25 @@
+{
+  "name": "vivid",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "biome check --write .",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "check-types": "pnpm -r check-types",
+    "dev:native": "pnpm --filter native dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:server": "pnpm --filter @vivid/backend dev",
+    "dev:setup": "pnpm --filter @vivid/backend dev:setup"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "2.3.8",
+    "ultracite": "6.3.10"
+  },
+  "packageManager": "pnpm@10.14.0"
+}

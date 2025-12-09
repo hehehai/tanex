@@ -1,0 +1,90 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!**/.next",
+      "!**/dist",
+      "!**/.turbo",
+      "!**/dev-dist",
+      "!**/.zed",
+      "!**/.vscode",
+      "!**/routeTree.gen.ts",
+      "!bts.jsonc",
+      "!**/.wrangler",
+      "!**/wrangler.jsonc",
+      "!**/.source",
+      "!**/_generated"
+    ]
+  },
+  "extends": ["ultracite/core", "ultracite/react"],
+  "linter": {
+    "rules": {
+      "nursery": {
+        "noReactForwardRef": "off",
+        "useMaxParams": "off",
+        "noLeakedRender": "off",
+        "noShadow": "off",
+        "useSortedClasses": {
+          "level": "warn",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cn", "cva", "tw", "tw.*"]
+          }
+        }
+      },
+      "style": {
+        "noHeadElement": "off",
+        "useFilenamingConvention": "off",
+        "useConsistentTypeDefinitions": "off",
+        "useUnifiedTypeSignatures": "off",
+        "noMagicNumbers": "off",
+        "noNamespace": "off",
+        "useBlockStatements": "off",
+        "noNestedTernary": "off",
+        "noNonNullAssertion": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off",
+        "noBarrelFile": "off",
+        "noImgElement": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "useAwait": "off",
+        "noUnknownAtRules": "off",
+        "noDocumentCookie": "off",
+        "noConsole": {
+          "level": "info",
+          "options": {
+            "allow": ["warn", "info", "error"]
+          }
+        }
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": {
+          "level": "warn",
+          "options": {
+            "maxAllowedComplexity": 30
+          }
+        }
+      },
+      "correctness": {
+        "noUnknownTypeSelector": "off"
+      },
+      "a11y": {
+        "useSemanticElements": "off",
+        "noNoninteractiveElementInteractions": "off",
+        "useKeyWithMouseEvents": "off",
+        "useKeyWithClickEvents": "off",
+        "noSvgWithoutTitle": "off",
+        "noStaticElementInteractions": "off",
+        "noLabelWithoutControl": "off"
+      }
+    }
+  }
+}
